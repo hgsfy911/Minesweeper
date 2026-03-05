@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minesweeper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Title -->
+    <header>
+      <h1 class="title">MINESWEEPER</h1>
+      <p class="subtitle">CLEAR THE FIELD · MARK THE MINES</p>
+    </header>
+
+    <!-- Difficulty selector -->
+    <div class="controls">
+      <label for="difficulty">DIFFICULTY</label>
+      <div class="select-wrapper">
+        <select id="difficulty">
+          <option value="beginner">BEGINNER — 9×9, 10 MINES</option>
+          <option value="intermediate">INTERMEDIATE — 16×16, 40 MINES</option>
+          <option value="expert">EXPERT — 30×16, 99 MINES</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Game panel -->
+    <div class="game-panel">
+
+      <!-- HUD: mine counter / reset / timer -->
+      <div class="hud">
+        <div class="hud-display">
+          <span class="hud-label">MINES</span>
+          <span class="hud-value" id="mines-count">010</span>
+        </div>
+        <button class="reset-btn" id="reset-btn" title="New Game">🙂</button>
+        <div class="hud-display">
+          <span class="hud-label">TIME</span>
+          <span class="hud-value" id="timer">000</span>
+        </div>
+      </div>
+
+      <!-- Board + overlay wrapper -->
+      <div class="board-wrapper">
+        <div class="board" id="board"></div>
+
+        <!-- Win / Lose overlay -->
+        <div class="overlay" id="overlay">
+          <div class="overlay-content">
+            <div class="overlay-icon" id="overlay-icon">💣</div>
+            <div class="overlay-msg"  id="overlay-msg">GAME OVER</div>
+            <div class="overlay-sub"  id="overlay-sub">You hit a mine!</div>
+            <button class="overlay-btn" id="overlay-restart">PLAY AGAIN</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.game-panel -->
+
+    <!-- Controls legend -->
+    <div class="legend">
+      <span>LEFT CLICK — Reveal</span>
+      <span>RIGHT CLICK — Flag / Unflag</span>
+      <span>DOUBLE CLICK — Chord</span>
+    </div>
+
+  </div><!-- /.container -->
+
+  <script src="game.js"></script>
+</body>
+</html>
